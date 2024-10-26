@@ -17,6 +17,7 @@ import "./App.css";
 import BarChart from "./Components/Charts/BarChart";
 import LineChart from "./Components/Charts/LineChart";
 import PieChart from "./Components/Charts/PieChart";
+import TableView from "./Components/Table";
 
 ChartJS.register(
   CategoryScale,
@@ -45,13 +46,14 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="dashboard">
       <h1>DashBoard-Electric Vehicle Population</h1>
-      <div>
+      <div className="charts">
         <BarChart data={csvData} />
         <LineChart data={csvData} />
         <PieChart data={csvData} />
       </div>
+      <TableView data={csvData} />
     </div>
   );
 }
