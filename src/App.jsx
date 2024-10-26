@@ -1,9 +1,34 @@
 import { useState, useEffect } from "react";
+import { Bar, Line, Pie } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement,
+} from "chart.js";
 import Papa from "papaparse";
 import "./App.css";
 import BarChart from "./Components/Charts/BarChart";
 import LineChart from "./Components/Charts/LineChart";
 import PieChart from "./Components/Charts/PieChart";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement
+);
 
 function App() {
   const [csvData, setCsvData] = useState([]);
@@ -24,7 +49,7 @@ function App() {
     <div>
       <h1>DashBoard-Electric Vehicle Population</h1>
       <div>
-        <BarChart />
+        <BarChart data={csvData} />
         <LineChart />
         <PieChart />
       </div>
