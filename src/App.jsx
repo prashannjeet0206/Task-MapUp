@@ -39,7 +39,6 @@ function App() {
       download: true,
       header: true,
       complete: (results) => {
-        // console.log(results.data);
         setCsvData(results.data);
       },
     });
@@ -51,7 +50,7 @@ function App() {
       <div>
         <BarChart data={csvData} />
         <LineChart />
-        <PieChart />
+        <PieChart data={csvData} />
       </div>
     </div>
   );
