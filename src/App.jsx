@@ -49,7 +49,7 @@ function App() {
       <h1>DashBoard-Electric Vehicle Population</h1>
       <div>
         <BarChart data={csvData} />
-        <LineChart />
+        <LineChart data={csvData} />
         <PieChart data={csvData} />
       </div>
     </div>

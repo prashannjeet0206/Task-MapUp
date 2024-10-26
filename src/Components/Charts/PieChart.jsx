@@ -1,3 +1,5 @@
+//* Pie Chart for EV Types Distribution
+
 import { Pie } from "react-chartjs-2";
 
 const PieChart = ({ data }) => {
